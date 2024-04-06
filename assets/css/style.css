@@ -1143,29 +1143,29 @@ section {
 
 .image-container-awards {
   display: flex;
-  flex-direction: column; /* Default: stack images vertically */
-  flex-wrap: wrap; /* Allow items to wrap as needed */
-  align-items: center; /* Center items for aesthetics, adjust as needed */
+  flex-direction: column; /* Stack images vertically by default */
+  flex-wrap: wrap; /* Allow wrapping */
+  align-items: center; /* Center-align items for better appearance */
+  justify-content: center; /* Center content horizontally */
+  gap: 10px; /* Adds some space between the images */
 
-  /* For screens wider than 768px, attempt to display images side by side */
   @media (min-width: 768px) {
-    flex-direction: row; /* Side by side */
-    justify-content: center; /* Center the content horizontally, adjust as needed */
+    flex-direction: row; /* Side by side on wider screens */
+    justify-content: flex-start; /* Align items to the start */
+    align-content: flex-start; /* Align content to the start */
+    flex-wrap: wrap; /* Ensure wrapping is enabled */
   }
 }
 
 .image-container-awards img {
   max-width: 100%;
-  /* Make images responsive */
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Spacing between stacked images */
 
-  /* Add spacing between stacked images */
-  /* For screens wider than 768px, adjust width to fit side by side */
   @media (min-width: 768px) {
-    max-width: 50%;
-    /* Set images to take 50% width on larger screens */
-    margin-bottom: 0;
-    /* Remove spacing between images when side by side */
+    flex: 1 1 auto; /* Flex grow, shrink, and basis set to auto */
+    max-width: calc(50% - 10px); /* Adjust for gap */
+    margin-bottom: 0; /* Remove spacing between images when side by side */
   }
 }
+
