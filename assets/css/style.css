@@ -1143,12 +1143,14 @@ section {
 
 .image-container-awards {
   display: flex;
-  flex-direction: column;
-  /* default: stack images vertically */
+  flex-direction: column; /* Default: stack images vertically */
+  flex-wrap: wrap; /* Allow items to wrap as needed */
+  align-items: center; /* Center items for aesthetics, adjust as needed */
 
-  /* For screens wider than 768px, display images side by side */
+  /* For screens wider than 768px, attempt to display images side by side */
   @media (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: row; /* Side by side */
+    justify-content: center; /* Center the content horizontally, adjust as needed */
   }
 }
 
